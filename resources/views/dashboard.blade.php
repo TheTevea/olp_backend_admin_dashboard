@@ -234,8 +234,9 @@
                     <li>69 Controllers to Migrate</li>
                     <li>28 Models to Migrate</li>
                     <li>74 View Directories</li>
-                    <li>13 Migrations Created</li>
-                    <li>8 Models Completed</li>
+                    <li>16 Migrations Complete</li>
+                    <li>14 Models Complete</li>
+                    <li>Core Ticketing System Ready</li>
                 </ul>
             </div>
         </div>

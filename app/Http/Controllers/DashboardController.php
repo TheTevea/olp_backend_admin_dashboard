@@ -30,18 +30,18 @@ class DashboardController extends Controller
             ],
             'phase2' => [
                 'name' => 'Database Migration',
-                'status' => 'in_progress',
-                'percentage' => 60,
+                'status' => 'completed',
+                'percentage' => 100,
             ],
             'phase3' => [
                 'name' => 'Models Migration',
                 'status' => 'in_progress',
-                'percentage' => 30,
+                'percentage' => 50,
             ],
             'phase4' => [
                 'name' => 'Controllers Migration',
-                'status' => 'pending',
-                'percentage' => 0,
+                'status' => 'in_progress',
+                'percentage' => 1,
             ],
             'phase5' => [
                 'name' => 'Views Migration',
