@@ -25,3 +25,7 @@ Thumbs.db
 
 # Legacy CakePHP application (kept for reference)
 # /cakephp-legacy
+
+# Legacy package.json with vulnerable dependencies (reference only, not used)
+cakephp-legacy/**/package.json
+cakephp-legacy/**/node_modules
