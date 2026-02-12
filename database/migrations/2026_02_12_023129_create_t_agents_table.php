@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('t_agents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('company_id')->constrained('companies')->onDelete('cascade');
+            $table->string('name');
+            $table->string('code')->unique();
+            $table->string('phone');
+            $table->string('email')->nullable();
+            $table->text('address')->nullable();
+            $table->decimal('commission_rate', 5, 2)->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

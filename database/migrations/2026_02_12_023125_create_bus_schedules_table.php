@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('bus_schedules', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('bus_id')->constrained('buses')->onDelete('cascade');
+            $table->foreignId('t_journey_id')->constrained('t_journeys')->onDelete('cascade');
+            $table->time('departure_time');
+            $table->time('arrival_time')->nullable();
+            $table->date('schedule_date');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

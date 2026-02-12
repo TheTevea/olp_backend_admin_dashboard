@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('bus_type_id')->constrained('bus_types')->onDelete('restrict');
+            $table->foreignId('company_id')->constrained('companies')->onDelete('cascade');
+            $table->foreignId('branch_id')->nullable()->constrained('branches')->onDelete('set null');
+            $table->string('plate_number')->unique();
+            $table->string('code')->unique();
+            $table->integer('capacity');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

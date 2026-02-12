@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('t_seat_controls', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('bus_schedule_id')->constrained('bus_schedules')->onDelete('cascade');
+            $table->string('seat_number');
+            $table->enum('status', ['available', 'booked', 'locked'])->default('available');
+            $table->foreignId('t_ticket_id')->nullable()->constrained('t_tickets')->onDelete('set null');
+            $table->dateTime('locked_until')->nullable();
             $table->timestamps();
+            
+            // Unique constraint to prevent double booking
+            $table->unique(['bus_schedule_id', 'seat_number']);
         });
     }
 

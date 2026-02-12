@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('t_destinations', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('name_kh')->nullable();
+            $table->string('code')->unique();
+            $table->unsignedBigInteger('province_id')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

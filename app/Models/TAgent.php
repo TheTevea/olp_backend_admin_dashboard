@@ -5,38 +5,36 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Customer extends Model
+class TAgent extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'company_id',
+        'name',
+        'code',
         'phone',
         'email',
         'address',
-        'id_number',
-        'nationality_id',
-        'date_of_birth',
-        'gender',
+        'commission_rate',
         'is_active',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
-        'date_of_birth' => 'date',
+        'commission_rate' => 'decimal:2',
     ];
 
     /**
-     * Get the full name of the customer.
+     * Get the company that owns this agent.
      */
-    public function getFullNameAttribute()
+    public function company()
     {
-        return "{$this->first_name} {$this->last_name}";
+        return $this->belongsTo(Company::class);
     }
 
     /**
-     * Get the tickets for this customer.
+     * Get the tickets sold by this agent.
      */
     public function tTickets()
     {
