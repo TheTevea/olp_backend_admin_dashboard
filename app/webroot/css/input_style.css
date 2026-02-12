@@ -1,0 +1,152 @@
+/* Base Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+input[type="search"],
+.filter-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #374151;
+    background-color: white;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    height: 40px;
+}
+
+/* Input Focus State */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+.filter-input:focus {
+    outline: none;
+    border-color: #4F94E8;
+    box-shadow: 0 0 0 3px rgba(79, 148, 232, 0.2);
+}
+
+/* Input Hover State */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+.filter-input:hover {
+    border-color: #9ca3af;
+}
+
+/* Disabled Input */
+input:disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #9ca3af;
+    opacity: 1;
+}
+
+/* Select Dropdown Styles */
+select,
+.filter-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 10px 35px 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: white;
+    color: #374151;
+    font-size: 14px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236b7280'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    cursor: pointer;
+    height: 40px;
+}
+
+select:focus,
+.filter-select:focus {
+    outline: none;
+    border-color: #4F94E8;
+    box-shadow: 0 0 0 3px rgba(79, 148, 232, 0.2);
+}
+
+/* Button Styles */
+button,
+.positive-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 40px;
+}
+
+.positive-btn {
+    background-color: #4F94E8;
+    color: white;
+}
+
+.positive-btn:hover {
+    background-color: #3a7bc8;
+}
+
+/* Date Input Group */
+.date-input-group {
+    display: flex;
+    width: 100%;
+}
+
+.filter-date {
+    flex: 1;
+    min-width: 120px;
+}
+
+.clear-date-btn {
+    background: none;
+    border: none;
+    padding: 0 8px;
+    margin-left: 4px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.clear-date-btn:hover {
+    color: #374151;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="password"],
+    input[type="search"],
+    select,
+    button {
+        height: 44px;
+        font-size: 16px;
+    }
+}
